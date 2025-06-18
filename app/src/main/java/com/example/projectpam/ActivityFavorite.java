@@ -1,25 +1,46 @@
+// Nama package disesuaikan dengan struktur proyek Anda
 package com.example.projectpam;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-// testing
-// testing 2
+
 public class ActivityFavorite extends AppCompatActivity {
+
+    private ImageButton btnBack;
+    private Button btnTerbaru;
+    private Button btnFavorite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_favorite);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        // Inisialisasi semua view dari layout
+        btnBack = findViewById(R.id.btnBack);
+        btnTerbaru = findViewById(R.id.btnTerbaru);
+        btnFavorite = findViewById(R.id.btnFavorite);
+        setupButtonListeners();
+    }
+
+    private void setupButtonListeners() {
+        // Listener untuk tombol kembali
+        btnBack.setOnClickListener(v -> finish());
+
+        // Listener untuk tombol "Terbaru"
+        btnTerbaru.setOnClickListener(v -> {
+            // Kode ini sudah benar karena ActivityTerbaru.java ada di proyek Anda
+            Intent intent = new Intent(ActivityFavorite.this, ActivityTerbaru.class);
+            startActivity(intent);
+            finish(); // Tutup activity ini
+        });
+
+        // Listener untuk tombol "Favorite" (tidak melakukan apa-apa)
+        btnFavorite.setOnClickListener(v -> {
+            // Anda sudah di halaman ini, jadi tidak perlu ada aksi
         });
     }
 }

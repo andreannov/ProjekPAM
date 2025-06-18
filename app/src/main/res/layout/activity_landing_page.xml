@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/birumuda"
-    tools:context=".LandingPage">
+    tools:context=".ActivityLandingPage">
 
     <!-- CardView untuk ImageView + TextView Found U -->
     <androidx.cardview.widget.CardView
