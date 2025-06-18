@@ -8,6 +8,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 // testing
+// testing 2
 public class ActivityFavorite extends AppCompatActivity {
 
     @Override
